@@ -11,11 +11,11 @@ const App = () => {
         <div className=' font-roboto'>
             <Header />
             <div className='container mx-auto min-h-screen py-20'>
-                {/* <Routes>
+                <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/category/:name' element={<CategoryPage />} />
                     <Route path='/search' element={<SearchPage />} />
-                </Routes> */}
+                </Routes>
             </div>
             <Footer />
         </div>
