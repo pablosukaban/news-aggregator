@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { paramsEverythingType } from '../../types';
+import { paramsEverythingType, sortByType } from '../../types';
+import { DateTime } from 'luxon';
 
 const initialState: paramsEverythingType = {
     sortBy: 'publishedAt',
@@ -7,6 +8,9 @@ const initialState: paramsEverythingType = {
     page: 1,
     q: 'bitcoin',
     language: 'en',
+    from: DateTime.now().toFormat('yyyy-MM-dd'),
+    to: DateTime.now().minus({ weeks: 1 }).toFormat('yyyy-MM-dd'),
+    searchIn: '',
 };
 
 export const paramsEverythingSlice = createSlice({
@@ -21,6 +25,15 @@ export const paramsEverythingSlice = createSlice({
         },
         changeLanguage: (state, action: PayloadAction<string>) => {
             state.language = action.payload;
+        },
+        changeSortBy: (state, action: PayloadAction<sortByType>) => {
+            state.sortBy = action.payload;
+        },
+        changeFromDate: (state, action: PayloadAction<string>) => {
+            state.from = action.payload;
+        },
+        changeToDate: (state, action: PayloadAction<string>) => {
+            state.to = action.payload;
         },
     },
 });

@@ -18,6 +18,7 @@ export type paramsEverythingType = {
     language: string;
     domains?: string;
     excludeDomains?: string;
+    searchIn?: string;
 };
 
 export type ArticleType = {

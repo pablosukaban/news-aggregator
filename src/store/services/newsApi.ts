@@ -7,7 +7,8 @@ import {
 
 const BASE_URL = 'https://newsapi.org/v2/';
 // const API_KEY = '0b5bf63e029948648360dd0c6df28821';
-const API_KEY = '1929e0d33ce54811881f019dbd8df434';
+// const API_KEY = '1929e0d33ce54811881f019dbd8df434';
+const API_KEY = 'fcd1ae799a5a4f8abc928d85e50c28f6';
 
 export const newsApi = createApi({
     reducerPath: 'api',
